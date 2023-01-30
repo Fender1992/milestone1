@@ -1,17 +1,17 @@
 package milestone1;
 
-public class cloths {
+public class Product {
 	
 	private String productName;
 	private String productDescription;
 	private double productPrice;
-	private int productQuantity;
+	private int productQuantity; // total amount of the product
 	
-	public cloths (String productName, String productDescription, int productQuantity){
-		this.setProductName(productName);
-		this.setProductDescription(productDescription);
-		this.setProductPrice();
-		this.setProductQuantity(productQuantity);
+	public Product (String productName, String productDescription, double productPrice, int productQuantity) {
+		this.productName = productName;
+		this.productDescription = productDescription;
+		this.productPrice = productPrice;
+		this.productQuantity = productQuantity;
 	}	
 
 	public String getProductName() {
@@ -34,16 +34,8 @@ public class cloths {
 		return productPrice;
 	}
 
-	public void setProductPrice() {
-		if(productName.equals("My Awesome tee")) {
-			productPrice = 9.99;
-		}
-		else if(productName.equals("My Awesome Sweater")) {
-			productPrice = 19.99;
-		}
-		else if(productName.equals("My Awesome Socks")) {
-			productPrice = 4.99;
-		}
+	public void setProductPrice(double productPrice) {
+		this.productPrice = productPrice;
 	}
 
 	public int getProductQuantity() {
@@ -54,5 +46,10 @@ public class cloths {
 		this.productQuantity = productQuantity;
 	}
 	
-
+	@Override
+	public String toString() {
+		return "Name: " + getProductName() + " / Description: " + getProductDescription() + 
+				" / Price: " + getProductPrice() + " / Total Available: " + getProductQuantity();
+	}
 }
+
